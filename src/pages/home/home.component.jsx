@@ -1,5 +1,11 @@
 import React,{ PureComponent, useContext, useState, useEffect} from 'react';
-import {ThemeContext} from '../contexts/theme.context'
+import {ThemeContext} from '../../contexts/theme.context'
+import {Link} from 'react-router-dom'
+import {
+	HomeDiv,
+	LinksDiv
+} from './home.styles'
+import {ReactComponent as East} from '../../icons/east.svg'
 
 
 const Home = () => {
@@ -8,13 +14,14 @@ const Home = () => {
 	const [loading , setLoading ] = useState(false)
 
 	return(
-		<div>
-            <h1>welcome to the home page</h1>
-            <b>my name is Kelvin Gothman</b>
-            <b>I am a Software Developer</b>
-        </div>
-		
-      
+		<HomeDiv>
+            <h1>Hey, I'm Kelvin Gothman</h1>
+            <h2>I am a Software Developer</h2>
+			<LinksDiv>
+				<Link to='/Projects'><East width='30' fill={currentTheme.fontSecond}/>My Projects</Link>
+				<Link to='/About'><East width='30' fill={currentTheme.fontSecond}/>About Me</Link>
+			</LinksDiv>
+        </HomeDiv>
 	);
 }
 

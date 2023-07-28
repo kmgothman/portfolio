@@ -1,18 +1,13 @@
 import React, {useState, useContext} from 'react';
 import {
 	NavigationContainer, 
-	LogoContainer, 
-	SideBarContainer, 
-	DropBoxContainer,
 	StyledLink,
 	LinkContainer
 } from './navigation.styles'
-import './navigation.css';
-import Logo from './Logo/Logo.png'
 import { useLocation} from "react-router-dom"
 import { ThemeContext } from '../../contexts/theme.context';
 
-const Navigation = () => {
+const Navigation = (props) => {
 
 const location = useLocation()
 const nav = location.pathname
@@ -25,15 +20,11 @@ const {currentTheme } = useContext(ThemeContext)
 
 	return (
 	<NavigationContainer>
-		<LogoContainer >
-			<img width="60" alt="Logo" src={Logo}/>
-		</LogoContainer>
-		<SideBarContainer className={currentTheme.mode}>
-			<LinkContainer className={nav == '/' ? 'selected':'unselected'}><StyledLink to="/">Home</StyledLink></LinkContainer>
-			<LinkContainer className={nav == '/Donations' ? 'selected':'unselected'}><StyledLink to="/Donations">Projects</StyledLink></LinkContainer>
-			<LinkContainer className={nav == '/Contacts' ? 'selected':'unselected'}><StyledLink to="/Contacts">Contact</StyledLink></LinkContainer>
-			<LinkContainer className={nav == '/Contacts' ? 'selected':'unselected'}><StyledLink to="/Contacts">About</StyledLink></LinkContainer>
-		</SideBarContainer>
+		
+		<LinkContainer ><b>01</b><StyledLink onClick={props.navClick} to="/">HOME</StyledLink></LinkContainer>
+		<LinkContainer ><b>02</b><StyledLink onClick={props.navClick} to="/Projects">PROJECTS</StyledLink></LinkContainer>
+		<LinkContainer ><b>03</b><StyledLink onClick={props.navClick} to="/About">ABOUT</StyledLink></LinkContainer>
+		<LinkContainer ><b>04</b><StyledLink onClick={props.navClick} to="/Contact">CONTACT</StyledLink></LinkContainer>
 	</NavigationContainer>
 	)
 	

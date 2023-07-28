@@ -1,16 +1,17 @@
 import React, { useContext } from 'react';
-import './App.css';
 import {  
   Route, 
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider 
 } from "react-router-dom"
-import Layout from "./pages/layout"
+import Layout from "./components/layout/layout.component"
 import Home from "./pages/home/home.component"
 import About from "./pages/about/about.component"
 import Contact from "./pages/contact/contact.component"
 import Projects from "./pages/projects/projects.component"
+import FMP from "./pages/indivprojects/fmp.component"
+
 import { ThemeProvider } from 'styled-components';
 import { ThemeContext } from './contexts/theme.context';
 
@@ -26,6 +27,7 @@ import { ThemeContext } from './contexts/theme.context';
             <Route path="projects" element={<Projects />} />
             <Route path="about" element={<About/>} />
             <Route path="contact" element={<Contact  />}/>
+            <Route path="fmp" element={<FMP />}/>
           </Route>
       )
     )

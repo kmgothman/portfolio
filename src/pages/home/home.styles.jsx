@@ -1,10 +1,26 @@
 import styled from 'styled-components'
 
-export const MainContainer = styled.div`
-    font-family: "Google Sans",Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
-    grid-column-start: 2;
-    grid-column-end:3;
+export const HomeDiv = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: ${props => props.theme.main};
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    flex-grow: 1;
+    h1 {
+        color: ${props => props.theme.fontSecond};
+    }
+    h2 {
+        color: ${props => props.theme.fontSecond}
+    }
+`
+export const LinksDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    a {
+        color: ${props => props.theme.fontSecond};
+        text-decoration: none;
+        margin: 10px;
+    }
+
 `
