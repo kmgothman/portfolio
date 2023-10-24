@@ -24,10 +24,10 @@ import { ThemeContext } from './contexts/theme.context';
       createRoutesFromElements(
         <Route path="/" element={<Layout/>}>
             <Route index element={<Home />} />
-            <Route path="projects" element={<Projects />} />
-            <Route path="about" element={<About/>} />
-            <Route path="contact" element={<Contact  />}/>
-            <Route path="fmp" element={<FMP />}/>
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<About/>} />
+            <Route path="/contact" element={<Contact  />}/>
+            <Route path="/fmp" element={<FMP />}/>
           </Route>
       )
     )
