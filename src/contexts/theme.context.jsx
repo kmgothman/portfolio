@@ -2,11 +2,11 @@ import { createContext, useState, useEffect } from 'react';
 
 
 export const ThemeContext = createContext({
-    mode: "light",
-    backgroundMain: "#f7f7f7",
-    backgroundSecond: "#adadad",
-    fontMain: "#8c8c8c",
-    fontSecond: "#616161",
+    mode: "dark",
+    backgroundMain: "#393a3b",
+    backgroundSecond: "#595c5e",
+    fontMain: "#b6babf",
+    fontSecond: "#e1eaf2",
     fifth: "white",
     sixth: "#F2F6FC",
     seventh: "#c9c9c9",
@@ -17,11 +17,11 @@ export const ThemeContext = createContext({
 
 export const CurrentThemeProvider = ({ children }) => {
     const [currentTheme, setCurrentTheme] = useState({
-        mode: "light",
-        backgroundMain: "#f7f7f7",
-        backgroundSecond: "#adadad",
-        fontMain: "#8c8c8c",
-        fontSecond: "#616161",
+        mode: "dark",
+        backgroundMain: "#393a3b",
+        backgroundSecond: "#595c5e",
+        fontMain: "#b6babf",
+        fontSecond: "#e1eaf2",
         fifth: "white",
         sixth: "#F2F6FC",
         seventh: "#c9c9c9",
