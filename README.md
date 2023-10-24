@@ -1,2 +1,2 @@
-# FMP
-Web App for managing fundraising processes
+# Portfolio
+A portfolio project built from scratch
