@@ -30,7 +30,7 @@ const Projects = () => {
 		
 			<ListContainer>
 				<ItemContainer><h1>Projects</h1></ItemContainer>
-				<StyledLink to='/fmp'><ItemContainer>
+				<StyledLink to="/fmp"><ItemContainer>
 					
 					<h2>FMP</h2>
 					<IconContainer>
