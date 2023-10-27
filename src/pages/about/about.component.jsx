@@ -18,6 +18,11 @@ const About = () => {
 
 	const { currentTheme } = useContext(ThemeContext)
 	const [loading , setLoading ] = useState(false)
+
+	const openPdfInNewTab = () => {
+    		const pdfUrl = '/resume.pdf'; // Replace with the actual URL of your PDF file
+   		 window.open(pdfUrl, '_blank');
+ 	 };
 	
 
 	return(
@@ -38,7 +43,7 @@ const About = () => {
 				<img width="40" height="40" alt="Logo" src={tensor}/>
 			</IconContainer>
 			<LinksDiv>
-				<Link><East width='30' fill={currentTheme.fontSecond}/>Resume</Link>
+				<Link onClick={openPdfInNewTab}><East width='30' fill={currentTheme.fontSecond}/>Resume</Link>
 				<Link to='https://www.linkedin.com/in/kelvin-gothman-137b97113/' target="_blank" rel="noopener noreferrer"><East width='30' fill={currentTheme.fontSecond}/>Linked In</Link>
 			</LinksDiv>
         </AboutDiv>
