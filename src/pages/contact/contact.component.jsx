@@ -13,6 +13,11 @@ const Contact = () => {
 	const { currentTheme } = useContext(ThemeContext)
 	const [loading , setLoading ] = useState(false)
 
+	const openPdfInNewTab = () => {
+    		const pdfUrl = '/resume.pdf';
+    		window.open(pdfUrl, '_blank');
+  	};
+
 	return(
 		<ContactDiv>
             <h1>Contact</h1>
@@ -20,7 +25,7 @@ const Contact = () => {
 			</h2>
 			
 			<LinksDiv>
-				<Link><East width='30' fill={currentTheme.fontSecond}/>Resume</Link>
+				<Link onClick={openPdfInNewTab}><East width='30' fill={currentTheme.fontSecond}/>Resume</Link>
 				<Link to='https://www.linkedin.com/in/kelvin-gothman-137b97113/' target="_blank" rel="noopener noreferrer"><East width='30' fill={currentTheme.fontSecond}/>Linked In</Link>
 			</LinksDiv>
         </ContactDiv>
