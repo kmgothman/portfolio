@@ -1,11 +1,12 @@
 import React,{ PureComponent, useContext, useState, useEffect} from 'react';
 import {ThemeContext} from '../../contexts/theme.context'
+import { MediaContext } from '../../contexts/media.context';
 import {
 	LogoDiv,
     ContentDiv,
     DescriptionDiv,
+    MobileDescriptionDiv,
     TitleDiv,
-    LeftDiv,
     RightDiv,
     LinksDiv,
     IconLink,
@@ -24,9 +25,10 @@ import tasksDemo from './gifs/fmp/tasks-demo.gif'
 const FMP = () => {
 
 	const { currentTheme } = useContext(ThemeContext)
-	const [loading , setLoading ] = useState(false)
+    const { currentMedia } = useContext(MediaContext)
 
 	return(
+       
 		<ContentDiv>
             <LogoDiv>
                 <img src={fmp} width='250' height='250'/>
@@ -34,45 +36,64 @@ const FMP = () => {
             <TitleDiv>
                 <h1>FMP</h1>
             </TitleDiv>
-            <DescriptionDiv>
+            {currentMedia.isMobile ? <MobileDescriptionDiv>
                 <div>
                     <h2>Technologies</h2>
-                    <h3>React</h3>
-                    <h3>Node</h3>
-                    <h3>Firebase</h3>
-                    <h3>Google Auth</h3>
-                    <h3>Express</h3>
-                    <h3>Styled Components</h3>
+                    <ul>
+                        <li><p>React</p></li>
+                        <li><p>Node</p></li>
+                        <li><p>Firebase</p></li>
+                        <li><p>Google Auth</p></li>
+                        <li><p>Express</p></li>
+                        <li><p>Styled Components</p></li>
+                    </ul>
                 </div>
-                <div>
-                    
-                </div>
+                
                 <RightDiv>
-                    <h3>A webapp to help missionaries with their fundraising 
+                    <p>A web app to help missionaries with their fundraising 
                         process. Users can upload their contacts, log donations, 
                         and analyze data. Built with a task management system that 
-                        generates new tasks based on the data uploaded.</h3>
+                        generates new tasks based on the data uploaded.</p>
                 </RightDiv>
+            </MobileDescriptionDiv> : <DescriptionDiv>
+                <div>
+                    <h2>Technologies</h2>
+                    <ul>
+                        <li><p>React</p></li>
+                        <li><p>Node</p></li>
+                        <li><p>Firebase</p></li>
+                        <li><p>Google Auth</p></li>
+                        <li><p>Express</p></li>
+                        <li><p>Styled Components</p></li>
+                    </ul>
+                </div>
                 
-            </DescriptionDiv>
+                <RightDiv>
+                    <p>A web app to help missionaries with their fundraising 
+                        process. Users can upload their contacts, log donations, 
+                        and analyze data. Built with a task management system that 
+                        generates new tasks based on the data uploaded.</p>
+                </RightDiv>
+                </DescriptionDiv>}
             <LinksDiv>
                 <LinkButton to="https://fmp-demo.onrender.com/" target="_blank" rel="noopener noreferrer">Try Demo</LinkButton>
                 <LinkButton to="https://fmp.onrender.com/" target="_blank" rel="noopener noreferrer" style={{background: 'none', color: currentTheme.fontSecond}}>Live Site</LinkButton>
                 <IconLink to="https://github.com/kmgothman/FMP" target="_blank" rel="noopener noreferrer"><GitHub viewBox="0 0 100 100"width='50' height='50' fill={currentTheme.fontSecond} stroke={currentTheme.fontSecond} /></IconLink>
             </LinksDiv>
             <DemoContainer>
-                <h3>Easy log in and authentication with Google popup</h3>
+                <p>Easy log in and authentication with Google popup</p>
                 <img src={logInDemo} alt="demo" />
             </DemoContainer>
             <DemoContainer>
-                <h3>Upload donations and sync 'new donors' with existing contacts</h3>
+                <p>Upload donations and sync 'new donors' with existing contacts</p>
                 <img src={uploadDemo} alt="demo" />
             </DemoContainer>
             <DemoContainer>
-                <h3>Add and complete tasks or they can be auto generated and synced with contacts when data is uploaded.</h3>
+                <p>Add and complete tasks or they can be auto generated and synced with contacts when data is uploaded.</p>
                 <img src={tasksDemo} alt="demo" />
             </DemoContainer>
         </ContentDiv>
+        
 		
       
 	);

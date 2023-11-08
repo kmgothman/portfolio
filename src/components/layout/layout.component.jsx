@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import {BrowserRouter, Route, Link} from "react-router-dom"
 import {Outlet} from "react-router-dom"
 import Navigation from "../../components/navigation/navigation"
@@ -8,7 +8,8 @@ import {
     MenuDiv,
     ContentDiv,
     StatickyBackground,
-    SolidBackground
+    SolidBackground,
+    MobileLayoutContainer
  } from './layout.styles';
 
  import {ReactComponent as Light} from "../../icons/light.svg"
@@ -18,10 +19,12 @@ import {
  import Logo from "../../icons/logo-no-background.png"
  import LogoLight from "../../icons/logo-white.png"
  import { ThemeContext } from '../../contexts/theme.context';
+ import { MediaContext } from '../../contexts/media.context';
 const Layout = () => {
 
     const [ navToggle, setNavToggle ] = useState(false)
     const {currentTheme, setCurrentTheme} = useContext(ThemeContext)
+    const {currentMedia, setCurrentMedia} = useContext(MediaContext)
 
     const navClick =()=> {
         setNavToggle(!navToggle)
@@ -58,27 +61,58 @@ const Layout = () => {
         }
     }
 
-	return(
-      <LayoutContainer>
+    useEffect(()=>{
+        const handleResize = () => {
+        if (window.innerWidth<1000) {
+            setCurrentMedia({isMobile:true})
+        } else {
+            setCurrentMedia({isMobile:false})
+        }
+        }
         
-        <LogoDiv>
-            <Link to='/'><img width="60" alt="Logo" src={currentTheme.mode == "light" ? Logo : LogoLight} /></Link>
-        </LogoDiv>
-        <ContentDiv>
-            {navToggle ? <Navigation navClick={navClick}/> : <Outlet /> }
-        </ContentDiv>        
-        <MenuDiv>
-            {currentTheme.mode =="light" ? <Light onClick={themeClick} width='50' height='50' fill={currentTheme.fontSecond} /> 
-            :<Dark onClick={themeClick} width='50' height='50' fill={currentTheme.fontSecond} />}
-            {navToggle ? <MenuOpen onClick= {navClick} width='50' height='50' fill={currentTheme.fontSecond} />
-             :<Menu onClick={navClick} width='50' height='50' fill={currentTheme.fontSecond} />}
+        window.addEventListener('resize', handleResize);
+        
+        return () => {
+        window.removeEventListener('resize', handleResize);
+        };
+
+    },[])
+
+    if (currentMedia.isMobile) {
+        return(
+            <MobileLayoutContainer>
+                {navToggle ? <MenuOpen onClick= {navClick} width='50' height='50' fill={currentTheme.fontSecond} />
+                :<Menu onClick={navClick} width='50' height='50' fill={currentTheme.fontSecond} />}
+                <ContentDiv>
+                    {navToggle ? <Navigation navClick={navClick}/> : <Outlet /> }
+                </ContentDiv> 
+                <StatickyBackground></StatickyBackground>
+                <SolidBackground></SolidBackground>
+            </MobileLayoutContainer>
+        )
+    } else {
+        return(
+        <LayoutContainer>
             
-        </MenuDiv>
-        <StatickyBackground></StatickyBackground>
-        <SolidBackground></SolidBackground>
-    
-      </LayoutContainer>
-	);
+            <LogoDiv>
+                <Link to='/'><img width="60" alt="Logo" src={currentTheme.mode == "light" ? Logo : LogoLight} /></Link>
+            </LogoDiv>
+            <ContentDiv>
+                {navToggle ? <Navigation navClick={navClick}/> : <Outlet /> }
+            </ContentDiv>        
+            <MenuDiv>
+                {currentTheme.mode =="light" ? <Light onClick={themeClick} width='50' height='50' fill={currentTheme.fontSecond} /> 
+                :<Dark onClick={themeClick} width='50' height='50' fill={currentTheme.fontSecond} />}
+                {navToggle ? <MenuOpen onClick= {navClick} width='50' height='50' fill={currentTheme.fontSecond} />
+                :<Menu onClick={navClick} width='50' height='50' fill={currentTheme.fontSecond} />}
+                
+            </MenuDiv>
+            <StatickyBackground></StatickyBackground>
+            <SolidBackground></SolidBackground>
+        
+        </LayoutContainer>
+        );
+    }
   
 }
 

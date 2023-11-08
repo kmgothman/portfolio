@@ -28,12 +28,12 @@ const About = () => {
 	return(
 		<AboutDiv>
             <h1>About</h1>
-            <h2>Hey, my name is Kelvin Gothman. I am Web Developer proficient in
+            <p>Hey, my name is Kelvin Gothman. I am Web Developer proficient in
 				 both front-end and back-end technologies. Always ready to embrace 
 				  new challenges and leverage cutting-edge tools to bring innovative
 				   digital solutions to life.
 				
-			</h2>
+			</p>
 			<IconContainer>
 				<img width="40" height="40" alt="Logo" src={ReactIcon}/>
 				<img width="50" height="30" alt="Logo" src={node}/>

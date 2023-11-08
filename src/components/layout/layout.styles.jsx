@@ -47,7 +47,17 @@ export const LayoutContainer = styled.div`
     justify-content: space-between;
    
 `
-
+export const MobileLayoutContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    svg {
+        z-index: 2;
+        margin: 1em;
+    }
+   
+`
 export const LogoDiv = styled.div`
 height: 100vh;
     width: 200px;
@@ -82,7 +92,7 @@ export const ContentDiv = styled.div`
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    // align-items: center;
     flex-grow: 2;
     z-index:3;
     overflow-y: scroll;

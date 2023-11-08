@@ -10,8 +10,10 @@ export const HomeDiv = styled.div`
     h1 {
         color: ${props => props.theme.fontSecond};
     }
-    h2 {
-        color: ${props => props.theme.fontSecond}
+    p {
+        color: ${props => props.theme.fontSecond};
+        font-size: 1.5em;
+        font-weight: bold;
     }
 `
 export const LinksDiv = styled.div`

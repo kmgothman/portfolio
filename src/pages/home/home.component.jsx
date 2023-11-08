@@ -16,7 +16,7 @@ const Home = () => {
 	return(
 		<HomeDiv>
             <h1>Hey, I'm Kelvin Gothman</h1>
-            <h2>I am a Software Developer</h2>
+            <p>I am a Software Developer</p>
 			<LinksDiv>
 				<Link to='/Projects'><East width='30' fill={currentTheme.fontSecond}/>My Projects</Link>
 				<Link to='/About'><East width='30' fill={currentTheme.fontSecond}/>About Me</Link>

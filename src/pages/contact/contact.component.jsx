@@ -21,8 +21,7 @@ const Contact = () => {
 	return(
 		<ContactDiv>
             <h1>Contact</h1>
-            <h2>Email - kmgothman@gmail.com
-			</h2>
+            <p>Email - kmgothman@gmail.com</p>
 			
 			<LinksDiv>
 				<Link onClick={openPdfInNewTab}><East width='30' fill={currentTheme.fontSecond}/>Resume</Link>

@@ -7,10 +7,11 @@ export const AboutDiv = styled.div`
     align-items: center;
     justify-self: center;
     flex-grow: 1;
+    margin: 20px;
     h1 {
         color: ${props => props.theme.fontSecond};
     }
-    h2 {
+    p {
         color: ${props => props.theme.fontSecond};
         max-width: 500px;
         border-top: 2px solid ${props => props.theme.fontSecond};

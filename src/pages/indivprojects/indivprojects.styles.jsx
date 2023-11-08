@@ -44,33 +44,43 @@ export const DescriptionDiv = styled.div`
             
             color: #3793de;
         }
-        h3 {
-            margin-left: 50px;
+        p {
+           
             margin-bottom: 0px;
             margin-top: 10px;
             color: ${props => props.theme.fontSecond};
         }
+        ul{
+            list-style-type: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
     }
 `
-export const LeftDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-    div {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-    h2 {
-        color: ${props => props.theme.fontSecond};
-        margin: 10px;
-        margin-right 15px;
-    }
-    h3 {
-        color: ${props => props.theme.fontSecond};
-        margin: 10px;
+export const MobileDescriptionDiv = styled.div`
+display: flex;
+flex-direction: column;
+align-items: stretch;
+div {
+    margin-top: 10px;
+    h2{
+        margin-top: 20px;
+        margin-left: 30px;
         
+        color: #3793de;
     }
+    p {
+       
+        margin-bottom: 0px;
+        margin-top: 10px;
+        color: ${props => props.theme.fontSecond};
+    }
+    ul{
+        list-style-type: none;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+}
 `
 
 export const RightDiv = styled.div`
@@ -79,8 +89,11 @@ export const RightDiv = styled.div`
     align-items: center;
     padding: 25px;
     max-width: 500px;
-    h3{
+    p{
         color: ${props => props.theme.fontSecond};
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-left: 2em;
     }
 `
 
@@ -120,8 +133,10 @@ export const IconLink = styled(Link)`
 export const DemoContainer = styled.div`
     display: flex;
     flex-direction: column;
-    h3 {
+    p {
         margin: 40px;
+        font-size: 1.2em;
+        font-weight: bold;
         color: ${props => props.theme.fontSecond};
     }
     padding-bottom: 40px;

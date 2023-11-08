@@ -12,6 +12,15 @@ export const ProjectsContainer = styled.div`
     left: 0;
     z-index: 6;
 `
+export const MobileProjectsContainer = styled.div`
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 75vh;
+    bottom: 0;
+    left: 0;
+    z-index: 6;
+`
 
 export const DisplayContainer = styled.div`
     flex-grow: 3;
@@ -49,6 +58,7 @@ export const ItemContainer = styled.div`
         border-bottom: 2px solid ${props => props.theme.fontMain};
         justify-content: space-between;
         text-decoration: none;
+        margin-left: 20px;
     `
 
 

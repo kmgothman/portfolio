@@ -14,11 +14,14 @@ import FMP from "./pages/indivprojects/fmp.component"
 
 import { ThemeProvider } from 'styled-components';
 import { ThemeContext } from './contexts/theme.context';
+import { CurrentMediaProvider } from './contexts/media.context';
+import { MediaContext } from './contexts/media.context'; 
 
 
 
   const App = () => {
     const { currentTheme} = useContext(ThemeContext)
+    const { currentMedia} = useContext(MediaContext)
 
     const router = createBrowserRouter(
       createRoutesFromElements(
@@ -35,9 +38,11 @@ import { ThemeContext } from './contexts/theme.context';
 
   
       return(
+        <CurrentMediaProvider media={currentMedia} >
         <ThemeProvider theme={currentTheme} >
         <RouterProvider router={router} />
         </ThemeProvider>
+        </CurrentMediaProvider>
       )
 
   }
