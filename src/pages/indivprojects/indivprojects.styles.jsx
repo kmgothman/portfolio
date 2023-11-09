@@ -133,11 +133,20 @@ export const IconLink = styled(Link)`
 export const DemoContainer = styled.div`
     display: flex;
     flex-direction: column;
+    h2{
+        margin-top: 20px;
+        margin-left: 20px;
+        
+        color: #3793de;
+    }
     p {
-        margin: 40px;
+        margin: 20px;
         font-size: 1.2em;
         font-weight: bold;
         color: ${props => props.theme.fontSecond};
+    }
+    img {
+        margin-top: 20px;
     }
     padding-bottom: 40px;
     border-bottom: 2px solid ${props => props.theme.fontSecond};

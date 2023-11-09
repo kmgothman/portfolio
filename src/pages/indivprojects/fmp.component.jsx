@@ -20,6 +20,8 @@ import { ReactComponent as GitHub} from '../../icons/github.svg'
 import logInDemo from './gifs/fmp/login-demo.gif'
 import uploadDemo from './gifs/fmp/upload-demo.gif'
 import tasksDemo from './gifs/fmp/tasks-demo.gif'
+import visualization from './gifs/fmp/data-visualization.gif'
+import infographic from '../../icons/fmp-infographic.jpg'
 
 
 const FMP = () => {
@@ -81,20 +83,30 @@ const FMP = () => {
                 <IconLink to="https://github.com/kmgothman/FMP" target="_blank" rel="noopener noreferrer"><GitHub viewBox="0 0 100 100"width='50' height='50' fill={currentTheme.fontSecond} stroke={currentTheme.fontSecond} /></IconLink>
             </LinksDiv>
             <DemoContainer>
-                <p>Easy log in and authentication with Google popup</p>
+                <img alt="infographic" src={infographic}/>
+            </DemoContainer>
+            <DemoContainer>
+                <h2>User Friendly Interface</h2>
+                <p>I designed a modern visually appealing web app. I considered the work flow of a missionary as described during our interviews. I then implemented their work flow into the app.</p>
                 <img src={logInDemo} alt="demo" />
             </DemoContainer>
             <DemoContainer>
+                <h2>Task Management System</h2>
+                <p>Add and complete tasks or they can be auto generated and synced with contacts when data is uploaded.</p>
+                <img src={tasksDemo} alt="demo" />
+            </DemoContainer>
+            <DemoContainer>
+                <h2>Seamless Data Uplad and Integration</h2>
                 <p>Upload donations and sync 'new donors' with existing contacts</p>
                 <img src={uploadDemo} alt="demo" />
             </DemoContainer>
             <DemoContainer>
-                <p>Add and complete tasks or they can be auto generated and synced with contacts when data is uploaded.</p>
-                <img src={tasksDemo} alt="demo" />
+                <h2>Data Visualization</h2>
+                <p>To help with data analytics, we built several vizualization tools. The first one, located on the dashboard, shows progress of donations over time. The second shows the distribution of donations by state. The last one gives a report of which reoccuring donations have dropped off.</p>
+                <img src={visualization} alt="demo" />
             </DemoContainer>
         </ContentDiv>
         
-		
       
 	);
 }

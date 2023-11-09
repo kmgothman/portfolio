@@ -62,6 +62,12 @@ const Layout = () => {
     }
 
     useEffect(()=>{
+        if (window.innerWidth<1000) {
+            setCurrentMedia({isMobile:true})
+        } else {
+            setCurrentMedia({isMobile:false})
+        }
+
         const handleResize = () => {
         if (window.innerWidth<1000) {
             setCurrentMedia({isMobile:true})
