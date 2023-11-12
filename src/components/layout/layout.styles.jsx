@@ -59,8 +59,8 @@ export const MobileLayoutContainer = styled.div`
    
 `
 export const LogoDiv = styled.div`
-height: 100vh;
-    width: 200px;
+    height: 100vh;
+    width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
