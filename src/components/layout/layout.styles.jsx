@@ -56,11 +56,10 @@ export const MobileLayoutContainer = styled.div`
         z-index: 2;
         margin: 1em;
     }
-   
 `
 export const LogoDiv = styled.div`
     height: 100vh;
-    width: 400px;
+    width: 15%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,7 +71,7 @@ export const LogoDiv = styled.div`
 
 export const MenuDiv = styled.div`
     height: 100vh;
-    width: 200px;
+    width: 15%;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
@@ -90,16 +89,20 @@ export const MenuDiv = styled.div`
 
 export const ContentDiv = styled.div`
     height: 100vh;
+    width: 70%;
     display: flex;
     flex-direction: column;
     // align-items: center;
-    flex-grow: 2;
     z-index:3;
     overflow-y: scroll;
+    position: relative;
     .example::-webkit-scrollbar {
         display: none;
       }
 
+      @media (max-width: 700px) {
+        width: 100%;
+      }
 
 
 `

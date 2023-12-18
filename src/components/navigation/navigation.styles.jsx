@@ -3,14 +3,19 @@ import {Link} from 'react-router-dom'
 
 
 export const NavigationContainer = styled.div`
-    flex-grow: 1;
     min-height: 100vh;
-    flex: 1;
     font-size: calc(10px + 2vmin);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
+    position: absolute;
+    left: 25%;
+    @media (max-width: 700px) {
+      position: relative;
+      left: auto;
+    }
+
 `
 const shrink = keyframes`
   from {
