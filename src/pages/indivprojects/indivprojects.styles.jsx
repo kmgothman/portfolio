@@ -12,7 +12,7 @@ export const LogoDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background: ${props => props.theme.fontMain};
+    background: ${props => props.background};
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     flex-grow:1;
@@ -25,7 +25,7 @@ flex-direction: column;
 align-items: flex-start;
 justify-content: flex-start;
 h1{
-    color: #3793de;
+    color: ${props => props.color};
     font-size: 2.5em;
     margin-left: 30px;
     
@@ -42,7 +42,7 @@ export const DescriptionDiv = styled.div`
             margin-top: 20px;
             margin-left: 30px;
             
-            color: #3793de;
+            color: ${props => props.color};
         }
         p {
            
@@ -67,7 +67,7 @@ div {
         margin-top: 20px;
         margin-left: 30px;
         
-        color: #3793de;
+        color: ${props => props.color};
     }
     p {
        
@@ -137,7 +137,7 @@ export const DemoContainer = styled.div`
         margin-top: 20px;
         margin-left: 20px;
         
-        color: #3793de;
+        color: ${props => props.color};
     }
     p {
         margin: 20px;
@@ -172,7 +172,7 @@ export const ResearchContainer = styled.div`
         margin: 10px;
     }
     h2 {
-        color: #3793de;
+        color: ${props => props.color};
         align-self: center;
         font-weight: normal;
         font-size: 2.5em;
@@ -241,7 +241,7 @@ export const AboutContainer = styled.div`
         
     }
     h2 {
-        color: #3793de;
+        color: ${props => props.color};
         margin-left: 30px;
     }
     border-bottom: 2px solid ${props => props.theme.fontSecond};

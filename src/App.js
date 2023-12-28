@@ -11,6 +11,7 @@ import About from "./pages/about/about.component"
 import Contact from "./pages/contact/contact.component"
 import Projects from "./pages/projects/projects.component"
 import FMP from "./pages/indivprojects/fmp.component"
+import SundayLead from './pages/indivprojects/sunday_lead.component';
 
 import { ThemeProvider } from 'styled-components';
 import { ThemeContext } from './contexts/theme.context';
@@ -31,6 +32,7 @@ import { MediaContext } from './contexts/media.context';
             <Route path="/about" element={<About/>} />
             <Route path="/contact" element={<Contact  />}/>
             <Route path="/fmp" element={<FMP />}/>
+            <Route path="/sunday-lead" element={<SundayLead/>}/>
           </Route>
       )
     )

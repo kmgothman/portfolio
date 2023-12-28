@@ -23,24 +23,31 @@ export const MobileProjectsContainer = styled.div`
 `
 
 export const DisplayContainer = styled.div`
-    flex-grow: 3;
-    background: ${props => props.theme.fontSecond};
+    width: 50%;
+    background: ${props => props.backgroundColor};
     border-top-right-radius: 30px;
-    margin-right: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background 0.5s ease;
 
 `
 export const ImageContainer = styled.div`
 
 `
+export const StyledImage = styled.img`
+    width: ${props => props.width};
+    transition: opacity 0.5s ease;
+    opacity: ${props => props.isVisible ? 1 : 0};
+`;
+
 export const StyledLink = styled(Link)`
     text-decoration: none;
 `
 
 export const ListContainer = styled.div`
-    flex-grow: 2;
+    width: 50%;
+    padding-left: 50px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -49,6 +56,9 @@ export const ListContainer = styled.div`
     }
     h2 {
         color: ${props => props.theme.fontMain};
+    }
+    @media (max-width: 700px) {
+        padding-left: 0px;
     }
     
 `
